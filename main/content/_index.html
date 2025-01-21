@@ -1,0 +1,209 @@
+---
+title: Twitter Open Source
+custom_css: index.scss
+---
+
+<!-- #OurPhilosophy -->
+
+<div class="section grey" id="reviews">
+    
+
+    <section class="reviews-container">
+        <div class="reviews-header">
+            <h1>DEPOIMENTOS</h1>
+            <h2>Excelente</h2>
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+            <p>Com base em <strong>15 avaliações</strong></p>
+            <img style="height: 30px;" src="https://cdn.trustindex.io/assets/platform/Google/logo.svg" alt="Google">
+        </div>
+
+        <div class="reviews-slider">
+            <button class="slider-button" id="prev">&#10094;</button>
+            <div class="reviews">
+                <div class="review">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Luh Cristina">
+                    <h3>Luh Cristina</h3>
+                    <span>30/07/2024</span>
+                    <div class="rating">⭐⭐⭐⭐⭐<span>✔</span></div>
+                    <p>Sensacional 😍</p>
+                </div>
+                <div class="review">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Eli Netto">
+                    <h3>Eli Netto</h3>
+                    <span>30/07/2024</span>
+                    <div class="rating">⭐⭐⭐⭐<span>✔</span></div>
+                    <p>Amo ❤️</p>
+                </div>
+                <div class="review">
+                    <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" alt="Gilberto Borges">
+                    <h3>Gilberto Borges</h3>
+                    <span>30/07/2024</span>
+                    <div class="rating">⭐⭐⭐⭐⭐<span>✔</span></div>
+                    <p>Excelente local!</p>
+                </div>
+            </div>
+            <button class="slider-button" id="next">&#10095;</button>
+        </div>
+
+        <div style="place-self: center;">
+            <a href="https://wa.me/5581999999999" class="whatsapp-button-head">
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Ícone do WhatsApp">
+                Agende Sua Consulta</a>
+        </div>
+
+        
+    </section>
+
+    <script>
+
+        const reviews = document.querySelector('.reviews');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        const reviewCards = document.querySelectorAll('.review');
+        
+        // Duplicar os itens para criar um efeito de rolagem infinita
+        reviews.innerHTML += reviews.innerHTML;
+        const reviewWidth = reviewCards[0].offsetWidth + 120; // Largura de um card mais a margem
+        let scrollAmount = 0;
+        
+        // Configurar largura para manter o loop suave
+        reviews.style.width = `${reviewCards.length * reviewWidth * 2}px`;
+        
+        // Função de rolagem para frente
+        function scrollForward() {
+            scrollAmount += reviewWidth;
+            reviews.scrollBy({ left: reviewWidth, behavior: 'smooth' });
+        
+            // Verifica se está no final e redefine a posição imediatamente
+            setTimeout(() => {
+                if (scrollAmount >= reviews.scrollWidth / 2) {
+                    scrollAmount = 0;
+                    reviews.scrollLeft = 0; // Reseta ao início instantaneamente
+                }
+            }, 300); // Tempo suficiente para o scroll "smooth" terminar
+        }
+        
+        // Função de rolagem para trás
+        function scrollBackward() {
+            if (scrollAmount <= 0) {
+                scrollAmount = reviews.scrollWidth / 2;
+                reviews.scrollLeft = reviews.scrollWidth / 2; // Reseta ao fim instantaneamente
+            }
+        
+            scrollAmount -= reviewWidth;
+            reviews.scrollBy({ left: -reviewWidth, behavior: 'smooth' });
+        }
+        
+        // Listeners para os botões
+        prev.addEventListener('click', scrollBackward);
+        next.addEventListener('click', scrollForward);
+        
+
+    </script>
+
+</div>
+
+<!-- Explore Projects -->
+
+<div class="section" id="serv">
+    
+    <section class="servico-servicos">
+        <div class="container-servicos">
+          <div class="imagem-servicos">
+            <img src="https://creator.nightcafe.studio/jobs/Dyb0Ed9i0l0Z0qGDozOU/Dyb0Ed9i0l0Z0qGDozOU--1--9msjp.jpg" alt="Psicanálise">
+          </div>
+          <div class="conteudo-servicos">
+            <h2 class="titulo-servicos">PSICANÁLISE</h2>
+            <p class="descricao-servicos">
+              Como Psicanalista, ajudo os indivíduos a explorarem e compreenderem seu inconsciente, aliviando o sofrimento psíquico e promovendo o autoconhecimento. Esse processo permite não apenas uma melhora significativa nas relações interpessoais, mas também o desenvolvimento de uma maior resiliência emocional, possibilitando que a pessoa enfrente os desafios da vida com mais equilíbrio e confiança.
+            </p>
+            <a href="https://wa.me/5581999999999" class="whatsapp-button-head">
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Ícone do WhatsApp">
+                Agende Sua Consulta</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="servico-servicos">
+        <div class="container-servicos">
+          <div class="imagem-servicos">
+            <img src="https://creator.nightcafe.studio/jobs/Dyb0Ed9i0l0Z0qGDozOU/Dyb0Ed9i0l0Z0qGDozOU--1--9msjp.jpg" alt="Psicanálise">
+          </div>
+          <div class="conteudo-servicos">
+            <h2 class="titulo-servicos">PSICANÁLISE</h2>
+            <p class="descricao-servicos">
+              Como Psicanalista, ajudo os indivíduos a explorarem e compreenderem seu inconsciente, aliviando o sofrimento psíquico e promovendo o autoconhecimento. Esse processo permite não apenas uma melhora significativa nas relações interpessoais, mas também o desenvolvimento de uma maior resiliência emocional, possibilitando que a pessoa enfrente os desafios da vida com mais equilíbrio e confiança.
+            </p>
+            <a href="https://wa.me/5581999999999" class="whatsapp-button-head">
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Ícone do WhatsApp">
+                Agende Sua Consulta</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="servico-servicos">
+        <div class="container-servicos">
+          <div class="imagem-servicos">
+            <img src="https://creator.nightcafe.studio/jobs/Dyb0Ed9i0l0Z0qGDozOU/Dyb0Ed9i0l0Z0qGDozOU--1--9msjp.jpg" alt="Psicanálise">
+          </div>
+          <div class="conteudo-servicos">
+            <h2 class="titulo-servicos">PSICANÁLISE</h2>
+            <p class="descricao-servicos">
+              Como Psicanalista, ajudo os indivíduos a explorarem e compreenderem seu inconsciente, aliviando o sofrimento psíquico e promovendo o autoconhecimento. Esse processo permite não apenas uma melhora significativa nas relações interpessoais, mas também o desenvolvimento de uma maior resiliência emocional, possibilitando que a pessoa enfrente os desafios da vida com mais equilíbrio e confiança.
+            </p>
+            <a href="https://wa.me/5581999999999" class="whatsapp-button-head">
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Ícone do WhatsApp">
+                Agende Sua Consulta</a>
+          </div>
+        </div>
+      </section>
+      
+</div>
+
+<!-- Follow Us @TwitterOSS -->
+
+<div class="grey section" id="follow-us">
+    
+    <section class="diferenciais-diff">
+        <div class="container-diff">
+          <div class="texto-diff">
+            <h2 class="titulo-diff">Diferenciais do Atendimento</h2>
+            <div class="diferenciais-lista-diff">
+              <div class="diferencial-item-diff">
+                <h3>Atendimento Online e Presencial</h3>
+                <p>Essa modalidade de atendimento serve para te trazer maior flexibilidade e comodidade.</p>
+              </div>
+              <hr>
+              <div class="diferencial-item-diff">
+                <h3>Duração das sessões</h3>
+                <p>As sessões têm duração de 50 minutos, seja no atendimento presencial ou online.</p>
+              </div>
+              <hr>
+              <div class="diferencial-item-diff">
+                <h3>Total privacidade</h3>
+                <p>Os atendimentos têm total privacidade. O processo terapêutico é seguro e sigiloso.</p>
+              </div>
+              <hr>
+              <div class="diferencial-item-diff">
+                <h3>Suporte por WhatsApp</h3>
+                <p>Os pacientes têm suporte por WhatsApp, bem como por ligação em casos de urgência.</p>
+              </div>
+            </div>
+            <a href="https://wa.me/5581999999999" class="whatsapp-button-head">
+                <img src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Ícone do WhatsApp">
+                Agende Sua Consulta</a>
+          </div>
+          <div class="imagem-diff">
+            <img src="https://img.freepik.com/premium-photo/planets-galaxy-science-fiction-wallpaper-beauty-deep-space-billions-galaxies-universe-cosmic-art-background_1028938-74870.jpg" alt="Diferenciais do Atendimento">
+          </div>
+        </div>
+      </section>
+      
+
+</div>
+
+
